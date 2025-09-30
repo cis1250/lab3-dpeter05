@@ -29,16 +29,12 @@ def is_sentence(text):
 
     return True
 
-user_sentence = input("Enter a sentence: ")
-
-while (is_sentence(user_sentence) == False):
-    print("This does not meet the criteria for a sentence.")
-    user_input = input("Enter a sentence: ")
-
 sentence = input("Enter a sentence: ")
 
 if sentence[0].isupper() and sentence[-1] in ".!?":
     words = sentence[:-1].lower().split()
+    print("This sentence has", len(words), "words.")
+
     word_list = []
     freq_list = []
 
