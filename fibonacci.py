@@ -6,24 +6,16 @@
 # Validate that the input is a positive integer.
 # Use a for loop to print the Fibonacci sequence up to that many terms.
 
-def fibonacci():
-    while True:
-        n = input("How many terms? ")
+n = input("How many terms? ")
 
-        if not n.isdigit():
-            print("Please enter a positive integer.")
-            continue
-
-        n = int(n)
-        if n <= 0:
-            print("Please enter a positive integer.")
-            continue
-
-        a, b = 0, 1
-        for i in range(n):
+if n.isdigit() and int(n) > 0:
+    n = int(n)
+    a, b = 0, 1
+    for i in range(n):
+        if i == n - 1:
+            print(a)
+        else:
             print(a, end=" ")
-            a, b = b, a + b
-        print()
-        break
-
-fibonacci()
+        a, b = b, a + b
+else:
+    print("Please enter a positive integer.")
